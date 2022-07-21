@@ -1,10 +1,23 @@
 <!DOCTYPE html>
-<html lang="en">
+<html
+        xmlns:th="http://www.thymeleaf.org"
+        lang="en">
 <head>
     <meta charset="UTF-8">
     <title>All Customers</title>
 </head>
 <body>
-    Displaying customers
+    <table>
+        <tr>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Age</th>
+        </tr>
+        <tr th:each="c:${customers}">
+            <td th:text="${c.name}"></td>
+            <td th:text="${c.email}"></td>
+            <td th:text="${c.age}"></td>
+        </tr>
+    </table>
 </body>
 </html>
